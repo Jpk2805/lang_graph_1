@@ -8,7 +8,6 @@ from langchain_core.tools import tool
 from langgraph.graph import StateGraph, START, END
 from langgraph.graph.message import add_messages
 from langgraph.prebuilt import ToolNode
-from pprint import pprint
 
 load_dotenv()
 
@@ -69,7 +68,7 @@ def print_conversation(stream):
     for message in stream:
         s = message['messages'][-1]
         if isinstance(s, tuple):
-            pprint(message)
+            print(message)
         else:
             message.pretty_print()
 
